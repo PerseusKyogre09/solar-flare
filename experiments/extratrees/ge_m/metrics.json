@@ -1,0 +1,17 @@
+{
+  "target": "ge_m",
+  "model": "ExtraTreesClassifier",
+  "selected_threshold": 0.1,
+  "validation": {
+    "tss": 0.5767315078073821
+  },
+  "test": {
+    "roc_auc": 0.9015456579718597,
+    "pr_auc": 0.313543359148639,
+    "tss": 0.6052065957653066,
+    "f1": 0.3214606819282108,
+    "precision": 0.20848658831972727,
+    "recall": 0.7016908212560387,
+    "balanced_accuracy": 0.8026032978826533
+  }
+}

@@ -1,0 +1,35 @@
+# Python environments and caches
+venv/
+data/venv/
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+
+# Local notebooks and editor/system files
+.idea/
+.vscode/
+.DS_Store
+*.swp
+
+# Large/raw datasets: download separately; see README_RESEARCH.md
+data/images/
+data/*.tar.gz
+data/Lat60_Lon60_Nans0_C1.0_24hr_png_224_features.csv
+data/sharp_mx-nf-all_2010-01-01_2024-04-30.csv
+data/sharp_cache/
+
+# Separate upstream/reference repository kept locally, not vendored here
+AR-flares/
+
+# Local logs and temporary outputs
+*.log
+*.tmp
+*.bak
+
+# Keep trained checkpoints and compact experiment results tracked.
+# Extra-Trees full-data joblib files exceed GitHub's 100 MB limit.
+experiments/extratrees/*/model.joblib
+# Large label table is kept locally with the dataset, not versioned.
+data/C1.0_24hr_224_png_Labels.txt

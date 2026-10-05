@@ -1,0 +1,11 @@
+{
+  "features": "data/Lat60_Lon60_Nans0_C1.0_24hr_png_224_features.csv",
+  "labels": "data/C1.0_24hr_224_png_Labels.txt",
+  "split_dir": "data",
+  "output_dir": "experiments/xgboost",
+  "seed": 42,
+  "thresholds": [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9],
+  "impute_training_median": false,
+  "class_weighting": "none",
+  "xgboost": {"n_estimators": 500, "max_depth": 4, "learning_rate": 0.05, "subsample": 0.8, "colsample_bytree": 0.8, "min_child_weight": 1, "reg_alpha": 0.0, "reg_lambda": 1.0, "objective": "binary:logistic", "eval_metric": "logloss", "random_state": 42, "n_jobs": 8, "tree_method": "hist"}
+}

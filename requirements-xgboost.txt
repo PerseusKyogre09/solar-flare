@@ -1,0 +1,2 @@
+# CPU-compatible XGBoost; no CUDA/ROCm setting is required by the baseline.
+xgboost>=2.0,<4

@@ -1,0 +1,14 @@
+{
+  "target": "ge_m",
+  "selected_threshold": 0.1,
+  "model": "HistGradientBoostingClassifier",
+  "test": {
+    "roc_auc": 0.8917947167630393,
+    "pr_auc": 0.3812981106349946,
+    "tss": 0.5376379950938013,
+    "f1": 0.4111134766872472,
+    "precision": 0.3174942453140414,
+    "recall": 0.5830314009661836,
+    "balanced_accuracy": 0.7688189975469006
+  }
+}
