@@ -79,8 +79,8 @@ RESULTS_COMPARISON.md        Compact model comparison
 
 ## Citations
 
-Dataset and method citations will be added here once the associated research paper and source references are finalized.
+Dataset and method citations will be added here once the associated research paper and source references are finalized. Setup and download instructions are in [SETUP.md](SETUP.md).
 
 ## License
 
-No project license has been selected yet. Dataset and source-code licenses remain those of their original providers.
+Project code is licensed under the [MIT License](LICENSE). Dataset and source-code licenses from original providers remain separate.
