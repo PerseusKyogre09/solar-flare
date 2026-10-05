@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+title: "The Sun Is a Deadly Laser: Solar Flare Prediction"
+message: "If you use this repository or its reported experiments, please cite the project report and the underlying dataset."
+type: software
+authors:
+  - family-names: Pal
+    given-names: Pradeepto
+  - family-names: Singh
+    given-names: "Arush A"
+  - family-names: Chauhan
+    given-names: Abhinav
+  - name: SRM Institute of Science and Technology
+    affiliation: "Department of Computer Science and Engineering, Ghaziabad, India"
+abstract: "Reproducible solar-flare prediction experiments comparing a CNN-LSTM image-sequence model with XGBoost, logistic regression, HistGradientBoosting, and Extra Trees tabular classifiers."
+keywords:
+  - solar flare forecasting
+  - solar active regions
+  - SDO/HMI
+  - magnetograms
+  - machine learning
+  - space weather
+license: MIT
+repository-code: "https://github.com/PerseusKyogre09/solar-flare"
+url: "https://github.com/PerseusKyogre09/solar-flare"
+date-released: 2026-10-06

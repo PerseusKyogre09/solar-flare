@@ -79,7 +79,13 @@ RESULTS_COMPARISON.md        Compact model comparison
 
 ## Citations
 
-Dataset and method citations will be added here once the associated research paper and source references are finalized. Setup and download instructions are in [SETUP.md](SETUP.md).
+The project report is available as [The Sun Is a Deadly Laser: Solar Flare Prediction](Sun-Is-A-Deadly-Laser.pdf). Cite it as:
+
+> P. Pal, A. A. Singh, and A. Chauhan, “The Sun Is a Deadly Laser: Solar Flare Prediction,” Department of Computer Science and Engineering, SRM Institute of Science and Technology, Ghaziabad, India, 2026.
+
+The report describes the five-model benchmark, SDO/HMI dataset, active-region-grouped protocol, binary `≥C` and `≥M` tasks, and multiclass CNN-LSTM task. Complete setup and download instructions are in [SETUP.md](SETUP.md).
+
+The benchmark dataset should also be cited as Boucheron et al., “Solar active region magnetogram image dataset for studies of space weather,” *Scientific Data*, 2023, DOI [10.1038/s41597-023-02628-8](https://doi.org/10.1038/s41597-023-02628-8), together with the relevant Dryad record [10.5061/dryad.jq2bvq898](https://doi.org/10.5061/dryad.jq2bvq898). Method citations are listed in the research report.
 
 ## License
 

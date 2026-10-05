@@ -101,4 +101,6 @@ Large data files, image archives, caches, and oversized Extra Trees joblib files
 
 ## Licensing and citations
 
-Project code is released under the MIT License in [LICENSE](LICENSE). Dataset terms remain those of the original Dryad, SDO, and JSOC providers. Cite the Dryad dataset record and the original AR-flares publication when using the data or derived results.
+Project code is released under the MIT License in [LICENSE](LICENSE). For this project, cite P. Pal, A. A. Singh, and A. Chauhan, “The Sun Is a Deadly Laser: Solar Flare Prediction,” SRM Institute of Science and Technology, 2026; the full report is [Sun-Is-A-Deadly-Laser.pdf](Sun-Is-A-Deadly-Laser.pdf).
+
+For the benchmark data, cite Boucheron et al., “Solar active region magnetogram image dataset for studies of space weather,” *Scientific Data*, 2023, DOI [10.1038/s41597-023-02628-8](https://doi.org/10.1038/s41597-023-02628-8), and the matching Dryad record [10.5061/dryad.jq2bvq898](https://doi.org/10.5061/dryad.jq2bvq898). Dataset terms remain those of the original providers.
