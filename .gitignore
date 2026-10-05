@@ -33,3 +33,5 @@ AR-flares/
 experiments/extratrees/*/model.joblib
 # Large label table is kept locally with the dataset, not versioned.
 data/C1.0_24hr_224_png_Labels.txt
+.research_cache/
+.research-venv/
