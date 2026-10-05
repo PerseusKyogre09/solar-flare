@@ -1,6 +1,6 @@
 # Solar-Flare Prediction Research Notes
 
-This document is the paper handoff for generating an IEEE-style research paper from this repository. It records the data, task definitions, models, results, reproducibility commands, and limitations. It should be provided together with the IEEE LaTeX template.
+This document records the data, task definitions, models, results, reproducibility commands, and limitations for the experiments in this repository.
 
 ## 1. Research objective
 
