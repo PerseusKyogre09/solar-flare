@@ -28,7 +28,7 @@ The NASA/SHARP-related CSV is retained as a separate resource and is not mixed w
 
 ## Results
 
-The current test results are summarized below. Binary metrics use validation-selected thresholds.
+The current test results are summarized below*. Binary metrics use validation-selected thresholds.
 
 | Model | Target | ROC-AUC | PR-AUC | TSS | F1 |
 |---|---|---:|---:|---:|---:|
@@ -40,6 +40,8 @@ The current test results are summarized below. Binary metrics use validation-sel
 | HistGradientBoosting | M or higher | 0.892 | 0.381 | 0.538 | 0.411 |
 | Extra Trees | C or higher | 0.830 | 0.632 | 0.506 | 0.590 |
 | Extra Trees | M or higher | 0.902 | 0.314 | 0.605 | 0.321 |
+
+*_All the results were obtained training on a single AMD Radeon RX 9060 XT 16GB DDR6_
 
 The CNN-LSTM is multiclass and is reported separately: accuracy 0.826, macro-F1 0.445, macro-TSS 0.262. Its per-class results are available in `cnn_lstm_classification_report.txt`.
 
