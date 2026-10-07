@@ -1,0 +1,18 @@
+{
+  "source": "cnn_lstm_test_results.json from solar-flare-research-package.zip (August 16 artifact)",
+  "model": "CNN-LSTM",
+  "checkpoint": "cnn_lstm_best.pth",
+  "test_sequences": 2021,
+  "accuracy": 0.8258287976249381,
+  "macro_precision": 0.43479974437952124,
+  "macro_recall": 0.4576670611837191,
+  "macro_f1": 0.4449404761904762,
+  "weighted_f1": 0.8250600834099103,
+  "per_class": {
+    "C": {"precision": 0.91270783847981, "recall": 0.8998829039812647, "f1": 0.90625},
+    "M": {"precision": 0.3916913946587537, "recall": 0.4731182795698925, "f1": 0.42857142857142855},
+    "X": {"precision": 0.0, "recall": 0.0, "f1": 0.0}
+  },
+  "confusion_matrix": [[1537, 171, 0], [147, 132, 0], [0, 34, 0]],
+  "preservation_note": "Copied from the archived package for provenance; no checkpoint is inferred from this report."
+}

@@ -1,0 +1,38 @@
+{
+  "checkpoint": "cnn_lstm.pth",
+  "confusion_matrix": [
+    [
+      1375,
+      333,
+      0
+    ],
+    [
+      150,
+      129,
+      0
+    ],
+    [
+      18,
+      16,
+      0
+    ]
+  ],
+  "metrics": {
+    "checkpoint": "cnn_lstm.pth",
+    "accuracy": 0.7441860465116279,
+    "macro_precision": 0.3869985564898751,
+    "macro_recall": 0.42246690673449,
+    "macro_f1": 0.3955708645553087,
+    "weighted_f1": 0.7619370246859241,
+    "C_precision": 0.8911211924821776,
+    "C_recall": 0.2698744769874477,
+    "C_f1": 0.0,
+    "M_precision": 0.8050351288056206,
+    "M_recall": 0.46236559139784944,
+    "M_f1": 0.0,
+    "X_precision": 0.8458935712088588,
+    "X_recall": 0.34081902245706736,
+    "X_f1": 0.0
+  },
+  "elapsed_seconds": 72.01269698143005
+}

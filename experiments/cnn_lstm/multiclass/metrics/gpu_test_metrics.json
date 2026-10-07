@@ -1,0 +1,70 @@
+{
+  "model": "CNN-LSTM",
+  "checkpoint": "cnn_lstm_best.pth",
+  "split": "Test",
+  "device": "AMD Radeon Graphics",
+  "torch_version": "2.11.0+rocm7.2",
+  "hip_version": "7.2.26015",
+  "batch_size": 4,
+  "test_sequences": 2021,
+  "elapsed_inference_seconds": 30.77773114900083,
+  "accuracy": 0.7283523008411678,
+  "multiclass_mcc": 0.3101243870483307,
+  "class_order": [
+    "C",
+    "M",
+    "X"
+  ],
+  "confusion_matrix": [
+    [
+      1294,
+      394,
+      20
+    ],
+    [
+      96,
+      172,
+      11
+    ],
+    [
+      0,
+      28,
+      6
+    ]
+  ],
+  "classification_report": {
+    "C": {
+      "precision": 0.9309352517985612,
+      "recall": 0.7576112412177985,
+      "f1-score": 0.8353776630083926,
+      "support": 1708.0
+    },
+    "M": {
+      "precision": 0.2895622895622896,
+      "recall": 0.6164874551971327,
+      "f1-score": 0.3940435280641466,
+      "support": 279.0
+    },
+    "X": {
+      "precision": 0.16216216216216217,
+      "recall": 0.17647058823529413,
+      "f1-score": 0.16901408450704225,
+      "support": 34.0
+    },
+    "accuracy": 0.7283523008411678,
+    "macro avg": {
+      "precision": 0.46088656784100435,
+      "recall": 0.5168564282167417,
+      "f1-score": 0.46614509185986047,
+      "support": 2021.0
+    },
+    "weighted avg": {
+      "precision": 0.8294600704469742,
+      "recall": 0.7283523008411678,
+      "f1-score": 0.7632408073337313,
+      "support": 2021.0
+    }
+  },
+  "probabilities_saved": true,
+  "predictions_csv": "experiments/cnn_lstm/multiclass/predictions/test_predictions.csv"
+}

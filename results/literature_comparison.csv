@@ -1,0 +1,5 @@
+study,dataset,forecast_horizon,target,representation,split_strategy,model,tss,hss,pr_auc,notes
+Nishizuka et al.,--,--,--,--,--,--,--,--,--,Cited in the compiled report; paper-specific values were not extracted and verified.
+Florios et al.,--,--,--,--,--,--,--,--,--,Cited in the compiled report; paper-specific values were not extracted and verified.
+Sun et al.,--,--,--,--,--,--,--,--,--,Cited in the compiled report; paper-specific values were not extracted and verified.
+Present study,Dryad-derived reduced-resolution HMI,--; exact label horizon not verified from artifacts,"ge_c, ge_m; separate C/M/X sequence task",29 generic engineered columns; 10-frame image sequences,Predefined active-region grouped; timestamp ranges overlap,"XGBoost, Logistic Regression, HistGradientBoosting, Extra Trees, CNN-LSTM",See results_final.csv,See results_final.csv,See results_final.csv,"Direct ranking is not justified when labels, horizons, data periods, splits, thresholds, or features differ."

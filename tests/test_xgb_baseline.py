@@ -25,5 +25,5 @@ def test_metrics_manual():
     result = binary_metrics([1, 1, 1, 0, 0, 0, 0, 0], [0.9, 0.8, 0.7, 0.6, 0.1, 0.1, 0.1, 0.1], 0.5)
     assert (result["tp"], result["tn"], result["fp"], result["fn"]) == (3, 4, 1, 0)
     assert result["pod_recall_tpr"] == 1.0 and result["far"] == 0.25
-    assert result["tss"] == 0.75  # TPR - FPR, not TPR - TNR
+    assert result["tss"] == 0.8  # TPR - FPR, not TPR - TNR
     assert np.isfinite(result["hss"]) and np.isfinite(result["tss"])

@@ -1,0 +1,7 @@
+model_a,model_b,target,auc_a,auc_b,difference_a_minus_b,ci_95_low,ci_95_high,paired_cluster_bootstrap_p_two_sided,bootstrap_resamples,seed,unit
+XGBoost,Logistic Regression,ge_c,0.8392489002312855,0.8460865393315702,-0.006837639100284676,-0.019002386390692384,0.005253761870160558,,2000,42,active-region cluster bootstrap; observation-level AUC
+XGBoost,HistGradientBoosting,ge_c,0.8392489002312855,0.833827909621441,0.005420990609844467,-0.0008649449979925088,0.011989569780042758,,2000,42,active-region cluster bootstrap; observation-level AUC
+XGBoost,Extra Trees,ge_c,0.8392489002312855,0.8303166176655122,0.008932282565773275,0.0014453314000336282,0.017504901566025317,,2000,42,active-region cluster bootstrap; observation-level AUC
+XGBoost,Logistic Regression,ge_m,0.9038354028305073,0.9224936724458592,-0.018658269615351886,-0.05412586333511094,0.0004687608049388321,,2000,42,active-region cluster bootstrap; observation-level AUC
+XGBoost,HistGradientBoosting,ge_m,0.9038354028305073,0.8917947167630393,0.012040686067467998,0.0007051064560775089,0.03042679780945586,,2000,42,active-region cluster bootstrap; observation-level AUC
+XGBoost,Extra Trees,ge_m,0.9038354028305073,0.9015423908487006,0.0022930119818067585,-0.019944468278026206,0.01736088391095451,,2000,42,active-region cluster bootstrap; observation-level AUC

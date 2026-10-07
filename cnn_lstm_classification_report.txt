@@ -1,20 +1,20 @@
               precision    recall  f1-score   support
 
-           C     0.9127    0.8999    0.9062      1708
-           M     0.3917    0.4731    0.4286       279
-           X     0.0000    0.0000    0.0000        34
+           C     0.9309    0.7576    0.8354      1708
+           M     0.2896    0.6165    0.3940       279
+           X     0.1622    0.1765    0.1690        34
 
-    accuracy                         0.8258      2021
-   macro avg     0.4348    0.4577    0.4449      2021
-weighted avg     0.8254    0.8258    0.8251      2021
+    accuracy                         0.7284      2021
+   macro avg     0.4609    0.5169    0.4661      2021
+weighted avg     0.8295    0.7284    0.7632      2021
 
 
 Overall Metrics
-Accuracy: 0.825829
-Macro F1: 0.444940
-Weighted F1: 0.825060
-Macro POD: 0.457667
-Macro FAR: 0.231867
-Macro CSI: 0.367100
-Macro TSS: 0.261891
-Macro HSS: 0.248024
+Accuracy: 0.728352
+Macro F1: 0.466145
+Weighted F1: 0.763241
+Macro POD: 0.516856
+Macro FAR: 0.539113
+Macro CSI: 0.351655
+Macro TSS: 0.328669
+Macro HSS: 0.242247

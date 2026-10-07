@@ -126,7 +126,9 @@ test_loader = DataLoader(
     test_dataset,
     batch_size=BATCH_SIZE,
     shuffle=False,
-    num_workers=4,
+    # Keep evaluation compatible with restricted Linux/container runtimes
+    # where multiprocessing resource-sharing sockets are unavailable.
+    num_workers=0,
     pin_memory=True
 )
 

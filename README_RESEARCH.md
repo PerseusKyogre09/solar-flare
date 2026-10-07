@@ -1,6 +1,6 @@
 # Solar-Flare Prediction Research Notes
 
-This document is the paper handoff for generating an IEEE-style research paper from this repository. It records the data, task definitions, models, results, reproducibility commands, and limitations for the experiments. Provide it together with the IEEE LaTeX template.
+This document is the paper handoff for generating an IEEE-style research paper from this repository. It records the data, task definitions, models, results, reproducibility commands, and limitations. It should be provided together with the IEEE LaTeX template.
 
 ## 1. Research objective
 
@@ -63,16 +63,18 @@ Test results:
 
 | Metric | Value |
 |---|---:|
-| Accuracy | 0.825829 |
-| Macro F1 | 0.444940 |
-| Weighted F1 | 0.825060 |
-| Macro POD/recall | 0.457667 |
-| Macro FAR | 0.231867 |
-| Macro CSI | 0.367100 |
-| Macro TSS | 0.261891 |
-| Macro HSS | 0.248024 |
+| Accuracy | 0.728352 |
+| Macro precision | 0.460887 |
+| Macro recall | 0.516856 |
+| Macro F1 | 0.466145 |
+| Weighted F1 | 0.763241 |
+| Multiclass MCC | 0.310124 |
+| Macro TSS | 0.328669 |
+| Macro HSS | 0.242247 |
+| Macro CSI | 0.351655 |
+| Macro FAR | 0.539113 |
 
-Per-class F1: C = 0.9062, M = 0.4286, X = 0.0000. The X class has only 34 test examples and was not detected by this run; this class-specific weakness must be reported rather than hidden by weighted accuracy.
+The current checkpoint's confusion matrix is `[[1294, 394, 20], [96, 172, 11], [0, 28, 6]]`. Per-class F1 is C = 0.8354, M = 0.3940, X = 0.1690; the model identified 6 of the 34 held-out X examples. One-vs-rest ROC-AUC is C = 0.7593, M = 0.7033, X = 0.8746; corresponding average precision is 0.9247, 0.2729, and 0.0852. Macro OVR ROC-AUC is 0.7791 and macro average precision is 0.4276. The 95% intervals and per-sequence probabilities are in `experiments/cnn_lstm/multiclass/` and `results/cnn_lstm_metrics.json`.
 
 ### XGBoost
 
@@ -82,10 +84,10 @@ Test results at the validation-selected threshold:
 
 | Target | Threshold | ROC-AUC | PR-AUC | TSS | F1 | Precision | Recall |
 |---|---:|---:|---:|---:|---:|---:|---:|
-| ge_c | 0.2 | 0.890780 | 0.852837 | 0.502974 | 0.748538 | 0.621359 | 0.941176 |
-| ge_m | 0.1 | 0.939496 | 0.720826 | 0.757143 | 0.500000 | 0.333333 | 1.000000 |
+| ge_c | 0.2 | 0.839249 | 0.660312 | 0.526603 | 0.591596 | 0.478087 | 0.775787 |
+| ge_m | 0.1 | 0.903835 | 0.372434 | 0.580691 | 0.385285 | 0.275246 | 0.641908 |
 
-The high recall for `ge_m` is accompanied by a high false-alarm rate and low precision. It should not be presented as perfect prediction.
+These are observation-level metrics from saved test probabilities. Earlier XGBoost headline metrics in repository artifacts were active-region-aggregated and must not be compared directly with observation-level results from other models. The high recall for `ge_m` is accompanied by a high false-alarm rate and low precision.
 
 ### Logistic regression
 
@@ -116,9 +118,9 @@ Extra Trees is an independently randomized ensemble of decision trees. It uses 1
 
 ## 6. Overall interpretation
 
-XGBoost is the strongest current tabular model by ROC-AUC for both binary targets and by TSS for `ge_m`. Logistic regression is competitive on `ge_c`, while HistGradientBoosting and Extra Trees provide additional model-family comparisons but do not consistently outperform XGBoost.
+Logistic regression has the highest observation-level ROC-AUC point estimate on both binary targets, while Extra Trees has the highest selected-threshold TSS point estimate for `ge_m`. Paired active-region bootstrap intervals overlap for most AUC differences; see `results/statistical_comparisons/auc_comparisons.csv` rather than treating small point-estimate differences as a definitive ranking.
 
-The CNN-LSTM has strong weighted accuracy mainly because C dominates the multiclass test set. Its macro metrics and zero X-class recall show that class imbalance materially affects performance. The paper should emphasize macro metrics and per-class results.
+The CNN-LSTM's weighted F1 and accuracy remain influenced by C-class prevalence. It detects some X-class examples, but rare-class uncertainty is wide; report macro metrics, per-class results, and cluster-bootstrap intervals together.
 
 The five methods should be described as a benchmark comparison, not as five directly interchangeable classifiers, because the CNN-LSTM and tabular models use different input representations and task formulations.
 

@@ -1,0 +1,11 @@
+OS: Linux-7.2.3-arch1-3-x86_64-with-glibc2.44
+Kernel: 7.2.3-arch1-3
+GPU: AMD Radeon RX 9060 XT (PCIe visible; device nodes unavailable)
+ROCm utilities: rocminfo/rocm-smi/hipconfig unavailable
+PyTorch: 2.10.0+rocm7.0
+HIP: 7.0.51831
+GPU visible: False
+Device count: 0
+Inference device: CPU
+Inference seconds: 86.814
+Limitation: /dev/kfd and /dev/dri are absent from this environment; GPU acceleration is unavailable because AMD kernel/device interfaces are not exposed.

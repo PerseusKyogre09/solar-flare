@@ -2,10 +2,18 @@
 venv/
 data/venv/
 .venv/
+.research-venv/
 __pycache__/
 *.py[cod]
 .pytest_cache/
 .mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+.cache/
+.triton/
+torch_extensions/
+pip-wheel-metadata/
 
 # Local notebooks and editor/system files
 .idea/
@@ -34,4 +42,11 @@ experiments/extratrees/*/model.joblib
 # Large label table is kept locally with the dataset, not versioned.
 data/C1.0_24hr_224_png_Labels.txt
 .research_cache/
-.research-venv/
+
+# Per-example model outputs are reproducible and can be large; keep aggregate
+# metrics and publication figures in the repository instead.
+experiments/**/predictions/
+/results/**/test_predictions.csv
+
+# Generated distribution archive
+/solar-flare-research-package.zip
