@@ -1,4 +1,5 @@
 import json
+import os
 from pathlib import Path
 
 import pandas as pd
@@ -28,7 +29,10 @@ DATA_DIR = Path(
     "data/images/Lat60_Lon60_Nans0_png_224"
 )
 
-MODEL_FILE = "cnn_lstm_best.pth"
+MODEL_FILE = os.environ.get("CNN_LSTM_CHECKPOINT", "cnn_lstm_best.pth")
+MODEL_PATH = Path(MODEL_FILE)
+OUTPUT_DIR = MODEL_PATH.parent if MODEL_PATH.parent != Path("") else Path(".")
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 
 SEQUENCE_LENGTH = 10
 BATCH_SIZE = 8
@@ -822,7 +826,7 @@ results = {
 
 
 with open(
-    "cnn_lstm_test_results.json",
+    OUTPUT_DIR / "cnn_lstm_test_results.json",
     "w"
 ) as f:
 
@@ -843,7 +847,7 @@ print(
 # ============================================================
 
 with open(
-    "cnn_lstm_classification_report.txt",
+    OUTPUT_DIR / "cnn_lstm_classification_report.txt",
     "w"
 ) as f:
 
@@ -942,7 +946,7 @@ plt.colorbar()
 plt.tight_layout()
 
 plt.savefig(
-    "cnn_lstm_confusion_matrix.png",
+    OUTPUT_DIR / "cnn_lstm_confusion_matrix.png",
     dpi=200
 )
 

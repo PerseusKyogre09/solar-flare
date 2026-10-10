@@ -73,7 +73,14 @@ def choose_x_threshold(probs, targets):
 # ============================================================
 
 def main():
+    # Change this one value to run a different random seed.
     SEED = 42
+    RUN_DIR = Path("runs") / "cnn_lstm" / f"seed_{SEED}"
+    RUN_DIR.mkdir(parents=True, exist_ok=True)
+    BEST_CHECKPOINT = RUN_DIR / f"cnn_lstm_best_seed_{SEED}.pth"
+    FINAL_CHECKPOINT = RUN_DIR / f"cnn_lstm_final_seed_{SEED}.pth"
+    HISTORY_FILE = RUN_DIR / f"cnn_lstm_training_history_seed_{SEED}.csv"
+    CONFIG_FILE = RUN_DIR / f"cnn_lstm_config_seed_{SEED}.txt"
 
     random.seed(SEED)
     np.random.seed(SEED)
@@ -557,7 +564,7 @@ def main():
             best_score = score
             best_epoch = epoch + 1
             epochs_without_improvement = 0
-            torch.save(model.state_dict(), "cnn_lstm_best.pth")
+            torch.save(model.state_dict(), BEST_CHECKPOINT)
             print("\n✓ New best model saved.")
             print(f"  Best Score: {best_score:.4f}")
         else:
@@ -567,10 +574,10 @@ def main():
             print("\nEarly stopping triggered.")
             break
 
-    torch.save(model.state_dict(), "cnn_lstm_final.pth")
+    torch.save(model.state_dict(), FINAL_CHECKPOINT)
 
     history_df = pd.DataFrame(history)
-    history_df.to_csv("cnn_lstm_training_history.csv", index=False)
+    history_df.to_csv(HISTORY_FILE, index=False)
 
     config = {
         "seed": SEED,
@@ -589,12 +596,16 @@ def main():
         "best_validation_score": best_score,
     }
 
-    with open("cnn_lstm_config.txt", "w") as f:
+    with open(CONFIG_FILE, "w") as f:
         for key, value in config.items():
             f.write(f"{key}: {value}\n")
 
     print("\n" + "=" * 60)
     print("TRAINING COMPLETE")
+    print(f"Best checkpoint: {BEST_CHECKPOINT}")
+    print(f"Final checkpoint: {FINAL_CHECKPOINT}")
+    print(f"Training history: {HISTORY_FILE}")
+    print(f"Configuration: {CONFIG_FILE}")
 
 
 if __name__ == "__main__":
