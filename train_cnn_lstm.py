@@ -125,6 +125,11 @@ def main():
         "cuda" if torch.cuda.is_available() else "cpu"
     )
 
+    # Windows uses spawn for DataLoader workers. Because the dataset class is
+    # defined inside main(), it cannot be pickled there. Use the main process
+    # on Windows; this is compatible with CUDA and avoids worker startup errors.
+    NUM_WORKERS = 0 if os.name == "nt" else 4
+
     print("=" * 60)
     print("CNN-LSTM TRAINING")
     print("=" * 60)
@@ -273,7 +278,7 @@ def main():
         train_dataset,
         batch_size=BATCH_SIZE,
         sampler=train_sampler,
-        num_workers=4,
+        num_workers=NUM_WORKERS,
         pin_memory=True,
         generator=generator
     )
@@ -282,7 +287,7 @@ def main():
         val_dataset,
         batch_size=BATCH_SIZE,
         shuffle=False,
-        num_workers=4,
+        num_workers=NUM_WORKERS,
         pin_memory=True
     )
 
@@ -290,7 +295,7 @@ def main():
         test_dataset,
         batch_size=BATCH_SIZE,
         shuffle=False,
-        num_workers=4,
+        num_workers=NUM_WORKERS,
         pin_memory=True
     )
 
