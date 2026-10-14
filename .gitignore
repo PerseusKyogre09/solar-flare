@@ -50,3 +50,18 @@ experiments/**/predictions/
 
 # Generated distribution archive
 /solar-flare-research-package.zip
+
+# Local experiment artifacts and large generated outputs. Keep source code,
+# protocol/checkpoint reports, compact aggregate tables, and publication figures
+# tracked; keep machine-specific runs/checkpoints/archives out of GitHub.
+/runs/
+/results/diagnostics/
+/results/historical_cnn_lstm/
+/results/matched_audit/
+/results/matched_experiment/
+/results/strict_matched/
+/results/image_cache/
+*.pth
+/*.zip
+/cnn_lstm_results.zip
+/strict_experiment_results.zip

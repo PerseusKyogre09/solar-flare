@@ -74,7 +74,7 @@ def choose_x_threshold(probs, targets):
 
 def main():
     # Change this one value to run a different random seed.
-    SEED = 42
+    SEED = 90
     RUN_DIR = Path("runs") / "cnn_lstm" / f"seed_{SEED}"
     RUN_DIR.mkdir(parents=True, exist_ok=True)
     BEST_CHECKPOINT = RUN_DIR / f"cnn_lstm_best_seed_{SEED}.pth"
